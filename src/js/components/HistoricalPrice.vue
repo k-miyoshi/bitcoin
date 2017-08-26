@@ -23,12 +23,12 @@ section {
     margin: 10px;
     padding: 20px;
     border-radius: 4px;
-    background: #37464f;
+    background: #62727b;
     box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 h2 {
     padding: 10px 0;
-    border: solid 2px #ffffff;
+    border-bottom: solid 1px #ffffff;
     text-align: center;
 }
 dl {
@@ -39,7 +39,6 @@ dl {
         float: left;
         width: 50%;
         padding: 15px 0;
-        border-bottom: solid 1px #62727b;
         box-sizing: border-box;
     }
     dt {
