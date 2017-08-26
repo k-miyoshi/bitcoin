@@ -31992,7 +31992,7 @@ exports = module.exports = __webpack_require__(96)(undefined);
 
 
 // module
-exports.push([module.i, "\ncanvas[data-v-310c74d2] {\n  padding: 20px;\n  box-sizing: border-box;\n}\nsection[data-v-310c74d2] {\n  margin: 10px;\n  padding: 20px;\n  border-radius: 4px;\n  background: #62727b;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);\n}\nh2[data-v-310c74d2] {\n  padding: 10px 0;\n  border-bottom: solid 1px #ffffff;\n  text-align: center;\n}\ndl[data-v-310c74d2] {\n  margin: 20px 0;\n  overflow: hidden;\n}\ndl dt[data-v-310c74d2], dl dd[data-v-310c74d2] {\n    float: left;\n    width: 50%;\n    padding: 15px 0;\n    box-sizing: border-box;\n}\ndl dt[data-v-310c74d2] {\n    clear: both;\n}\ndl dd[data-v-310c74d2] {\n    text-align: right;\n}\n.copyright[data-v-310c74d2] {\n  font-size: 10px;\n}\n", ""]);
+exports.push([module.i, "\ncanvas[data-v-310c74d2] {\n  padding: 20px;\n  box-sizing: border-box;\n}\nsection[data-v-310c74d2] {\n  margin: 10px;\n  padding: 20px;\n  color: #333333;\n}\nh2[data-v-310c74d2] {\n  padding: 10px 0;\n  border-bottom: solid 1px #333333;\n  text-align: center;\n}\ndl[data-v-310c74d2] {\n  margin: 20px 0;\n  overflow: hidden;\n}\ndl dt[data-v-310c74d2], dl dd[data-v-310c74d2] {\n    float: left;\n    width: 50%;\n    padding: 15px 0;\n    box-sizing: border-box;\n}\ndl dt[data-v-310c74d2] {\n    clear: both;\n}\ndl dd[data-v-310c74d2] {\n    text-align: right;\n}\n.copyright[data-v-310c74d2] {\n  font-size: 10px;\n}\n", ""]);
 
 // exports
 
@@ -32022,8 +32022,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // need for async/await
 var HISTORICAL_API = 'https://api.coindesk.com/v1/bpi/historical/close.json?currency=JPY'; //
-//
-//
 //
 //
 //

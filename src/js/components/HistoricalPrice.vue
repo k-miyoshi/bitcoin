@@ -22,13 +22,11 @@ canvas {
 section {
     margin: 10px;
     padding: 20px;
-    border-radius: 4px;
-    background: #62727b;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    color: #333333;
 }
 h2 {
     padding: 10px 0;
-    border-bottom: solid 1px #ffffff;
+    border-bottom: solid 1px #333333;
     text-align: center;
 }
 dl {
