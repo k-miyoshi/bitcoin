@@ -21,12 +21,12 @@ canvas {
 }
 section {
     margin: 10px;
-    padding: 20px;
+    padding: 0 20px 10px 20px;
     color: #333333;
 }
 h2 {
     padding: 10px 0;
-    border-bottom: solid 1px #333333;
+    border: solid 1px #333333;
     text-align: center;
 }
 dl {
