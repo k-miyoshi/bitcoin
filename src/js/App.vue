@@ -64,13 +64,13 @@ export default {
             const datasets = Object.values(dataParam)
 
             const bitcoinChart = new Chart(CTX, {
-                type: 'line',
+                type: "line",
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: 'JPY',
+                        label: "JPY",
                         fill: false,
-                        borderColor: '#ffffff',
+                        borderColor: "#ffffff",
                         borderWidth: 2,
                         pointRadius: 0,
                         data: datasets
