@@ -56,6 +56,48 @@ time {
 <script>
 export default {
   name: 'current-price',
-  props: ['results']
+  props: ['results'],
+  beforeUpdate: function() {
+      if (this.results.chartData) {
+        this._createChart(this.results.chartData)
+      }
+  },
+  methods: {
+      _createChart: function(dataParam) {
+          const CTX = document.querySelector('.BitcoinChart')
+
+          const labels = Object.keys(dataParam)
+          const datasets = Object.values(dataParam)
+
+          const bitcoinChart = new Chart(CTX, {
+              type: "line",
+              data: {
+                  labels: labels,
+                  datasets: [{
+                      label: "JPY",
+                      fill: false,
+                      borderColor: "#ffffff",
+                      borderWidth: 2,
+                      pointRadius: 0,
+                      data: datasets
+                  }]
+              },
+              options: {
+                  showLine: true,
+                  legend: {
+                      display: false
+                  },
+                  scales: {
+                      xAxes: [{
+                          display: false
+                      }],
+                      yAxes: [{
+                          display: false
+                      }]
+                  }
+              }
+          })
+      }
+  }
 }
 </script>

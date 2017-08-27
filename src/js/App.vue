@@ -50,54 +50,20 @@ export default {
         const historyResponse = await axios.get(HISTORICAL_API)
 
         this.currentResults = currentResponse.data
-        this.historicalResults.bpi = this._compare(historyResponse.data)
+        this.currentResults.chartData = historyResponse.data.bpi
+
+        this.historicalResults.bpi = this._compare(historyResponse.data.bpi)
         this.historicalResults.disclaimer = historyResponse.data.disclaimer
 
-        this._createChart(historyResponse.data.bpi)
         this._compare(historyResponse.data);
     },
     methods: {
-        _createChart: function(dataParam) {
-            const CTX = document.querySelector('.BitcoinChart')
-
-            const labels = Object.keys(dataParam)
-            const datasets = Object.values(dataParam)
-
-            const bitcoinChart = new Chart(CTX, {
-                type: "line",
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: "JPY",
-                        fill: false,
-                        borderColor: "#ffffff",
-                        borderWidth: 2,
-                        pointRadius: 0,
-                        data: datasets
-                    }]
-                },
-                options: {
-                    showLine: true,
-                    legend: {
-                        display: false
-                    },
-                    scales: {
-                        xAxes: [{
-                            display: false
-                        }],
-                        yAxes: [{
-                            display: false
-                        }]
-                    }
-                }
-            })
-        },
         _compare: function(dataParam) {
-            const objDate = Object.keys(dataParam.bpi).reverse()
+            const objDate = Object.keys(dataParam).reverse()
             let sorted = {}
 
             for (var i = 0; i < objDate.length; i++) {
-                sorted[objDate[i]] = dataParam.bpi[objDate[i]]
+                sorted[objDate[i]] = dataParam[objDate[i]]
             }
             return sorted
         }
