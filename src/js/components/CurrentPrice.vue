@@ -1,6 +1,7 @@
 <template>
 <section>
     <h1><span>Bit Coin Price Index</span></h1>
+    <canvas class="BitcoinChart" width="100" height="50"></canvas>
     <dl>
         <dt>{{ results.bpi.USD.description }}</dt>
         <dd>$ {{ results.bpi.USD.rate }}</dd>
@@ -31,7 +32,7 @@ h1 {
     }
 }
 dl {
-    padding: 10px 0;
+    padding: 20px 0 10px 0;
 
     dt {
         padding: 10px 0 0 0;
@@ -53,39 +54,8 @@ time {
 </style>
 
 <script>
-import axios from 'axios'
-
-const CURRENT_API = 'https://api.coindesk.com/v1/bpi/currentprice/JPY.json'
-
 export default {
   name: 'current-price',
-  data: function() {
-    return {
-        results: {
-            bpi: {
-                USD: {
-                    description: 'United States Dollar',
-                    rate: '-'
-                },
-                JPY: {
-                    description: 'Japanese Yen',
-                    rate: '-'
-                }
-            },
-            time: {
-                updated: ''
-            }
-        }
-    }
-  },
-  created: function() {
-    axios.get(CURRENT_API)
-    .then((response) => {
-        this.results = response.data
-    })
-    .catch((error) => {
-        console.log(error)
-    })
-  }
+  props: ['results']
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
     <div>
-        <canvas class="BitcoinChart" width="400" height="400"></canvas>
+
         <section>
-            <h2>Monthly Bit Coin Price Table</h2>
+            <h2>Monthly Bit Coin Price</h2>
             <dl>
                 <template v-for="(value, key) in results.bpi">
                 <dt>{{ key }}</dt>
@@ -15,18 +15,14 @@
 </template>
 
 <style lang="scss" scoped>
-canvas {
-    padding: 20px;
-    box-sizing: border-box;
-}
 section {
-    margin: 10px;
+    margin: 40px 20px 20px 20px;
     padding: 0 20px 10px 20px;
-    color: #333333;
+    color: #666666;
 }
 h2 {
     padding: 10px 0;
-    border: solid 1px #333333;
+    border: solid 1px #666666;
     text-align: center;
 }
 dl {
@@ -52,58 +48,10 @@ dl {
 </style>
 
 <script>
-import 'babel-polyfill'; // need for async/await
-import axios from 'axios'
 import Chart from 'chart.js'
-
-const HISTORICAL_API = 'https://api.coindesk.com/v1/bpi/historical/close.json?currency=JPY'
 
 export default {
     name: 'historical-price',
-    data: function() {
-        return {
-            results: ''
-        }
-    },
-    mounted: async function() {
-        const response = await axios.get(HISTORICAL_API)
-        this.results = response.data
-        this._createChart()
-    },
-    methods: {
-        _createChart: function() {
-            /* chart rendering */
-            const CTX = document.querySelector('.BitcoinChart')
-
-            const labels = Object.keys(this.results.bpi)
-            const datasets = Object.values(this.results.bpi)
-
-            const bitcoinChart = new Chart(CTX, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'JPY',
-                        fill : 'origin',
-                        data: datasets
-                    }]
-                },
-                options: {
-                    showLine: true,
-                    legend: {
-                        display: false
-                    },
-                    scales: {
-                        xAxes: [{
-                            display: false
-                        }],
-                        yAxes: [{
-                            display: true
-                        }]
-                    }
-                }
-            })
-        }
-    }
+    props: ['results']
 }
 </script>
