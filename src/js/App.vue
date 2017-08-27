@@ -49,7 +49,7 @@ export default {
         const currentResponse = await axios.get(CURRENT_API)
         const historyResponse = await axios.get(HISTORICAL_API)
 
-        this.currentResults = currentResponse.data
+        this.currentResults = currentResponse.data 
         this.currentResults.chartData = historyResponse.data.bpi
 
         this.historicalResults.bpi = this._compare(historyResponse.data.bpi)

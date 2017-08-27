@@ -4,11 +4,11 @@
     <canvas class="BitcoinChart" width="100" height="50"></canvas>
     <dl>
         <dt>{{ results.bpi.USD.description }}</dt>
-        <dd>$ {{ results.bpi.USD.rate }}</dd>
+        <dd>$ {{ results.bpi.USD.rate.split('.')[0] }}.<span>{{ results.bpi.USD.rate.split('.')[1] }}</span></dd>
         <dt>{{ results.bpi.JPY.description }}</dt>
-        <dd>&yen; {{ results.bpi.JPY.rate }}</dd>
+        <dd>&yen; {{ results.bpi.JPY.rate.split('.')[0] }}.<span>{{ results.bpi.JPY.rate.split('.')[1] }}</span></dd>
     </dl>
-    <time :datetime="results.time.updatedISO">updated {{ results.time.updatedISO }}</time>
+    <time :datetime="results.time.updatedISO">updated {{ results.time.updated }}</time>
 </section>
 </template>
 
@@ -43,6 +43,10 @@ dl {
         border-bottom: solid 1px #62727b;
         font-size: 30px;
         text-align: right;
+
+        span {
+            font-size: 22px;
+        }
     }
 }
 time {

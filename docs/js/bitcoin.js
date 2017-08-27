@@ -21348,9 +21348,9 @@ var _App2 = _interopRequireDefault(_App);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 new _vue2.default({
-  el: '#app',
-  template: '<App/>',
-  components: { App: _App2.default }
+    el: '#app',
+    template: '<App/>',
+    components: { App: _App2.default }
 });
 
 /***/ }),
@@ -37418,7 +37418,7 @@ exports = module.exports = __webpack_require__(134)(undefined);
 
 
 // module
-exports.push([module.i, "\nsection[data-v-5721c8ad] {\n  margin: 10px;\n  padding: 20px;\n  border-radius: 4px;\n  background: #37464f;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);\n}\nh1[data-v-5721c8ad] {\n  margin: 0 0 20px 0;\n  font-size: 24px;\n  text-align: center;\n}\nh1 span[data-v-5721c8ad] {\n    display: block;\n    padding: 15px 0;\n    border: solid 4px #ffffff;\n}\ndl[data-v-5721c8ad] {\n  padding: 20px 0 10px 0;\n}\ndl dt[data-v-5721c8ad] {\n    padding: 10px 0 0 0;\n}\ndl dd[data-v-5721c8ad] {\n    display: block;\n    padding: 10px 0;\n    border-bottom: solid 1px #62727b;\n    font-size: 30px;\n    text-align: right;\n}\ntime[data-v-5721c8ad] {\n  display: block;\n  margin: 10px 0 0 0;\n  font-size: 12px;\n  text-align: right;\n}\n", ""]);
+exports.push([module.i, "\nsection[data-v-5721c8ad] {\n  margin: 10px;\n  padding: 20px;\n  border-radius: 4px;\n  background: #37464f;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);\n}\nh1[data-v-5721c8ad] {\n  margin: 0 0 20px 0;\n  font-size: 24px;\n  text-align: center;\n}\nh1 span[data-v-5721c8ad] {\n    display: block;\n    padding: 15px 0;\n    border: solid 4px #ffffff;\n}\ndl[data-v-5721c8ad] {\n  padding: 20px 0 10px 0;\n}\ndl dt[data-v-5721c8ad] {\n    padding: 10px 0 0 0;\n}\ndl dd[data-v-5721c8ad] {\n    display: block;\n    padding: 10px 0;\n    border-bottom: solid 1px #62727b;\n    font-size: 30px;\n    text-align: right;\n}\ndl dd span[data-v-5721c8ad] {\n      font-size: 22px;\n}\ntime[data-v-5721c8ad] {\n  display: block;\n  margin: 10px 0 0 0;\n  font-size: 12px;\n  text-align: right;\n}\n", ""]);
 
 // exports
 
@@ -37468,6 +37468,10 @@ module.exports = function listToStyles(parentId, list) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+//
+//
+//
+//
 //
 //
 //
@@ -37583,11 +37587,11 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       "width": "100",
       "height": "50"
     }
-  }), _vm._v(" "), _c('dl', [_c('dt', [_vm._v(_vm._s(_vm.results.bpi.USD.description))]), _vm._v(" "), _c('dd', [_vm._v("$ " + _vm._s(_vm.results.bpi.USD.rate))]), _vm._v(" "), _c('dt', [_vm._v(_vm._s(_vm.results.bpi.JPY.description))]), _vm._v(" "), _c('dd', [_vm._v("¥ " + _vm._s(_vm.results.bpi.JPY.rate))])]), _vm._v(" "), _c('time', {
+  }), _vm._v(" "), _c('dl', [_c('dt', [_vm._v(_vm._s(_vm.results.bpi.USD.description))]), _vm._v(" "), _c('dd', [_vm._v("$ " + _vm._s(_vm.results.bpi.USD.rate.split('.')[0]) + "."), _c('span', [_vm._v(_vm._s(_vm.results.bpi.USD.rate.split('.')[1]))])]), _vm._v(" "), _c('dt', [_vm._v(_vm._s(_vm.results.bpi.JPY.description))]), _vm._v(" "), _c('dd', [_vm._v("¥ " + _vm._s(_vm.results.bpi.JPY.rate.split('.')[0]) + "."), _c('span', [_vm._v(_vm._s(_vm.results.bpi.JPY.rate.split('.')[1]))])])]), _vm._v(" "), _c('time', {
     attrs: {
       "datetime": _vm.results.time.updatedISO
     }
-  }, [_vm._v("updated " + _vm._s(_vm.results.time.updatedISO))])])
+  }, [_vm._v("updated " + _vm._s(_vm.results.time.updated))])])
 }
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('h1', [_c('span', [_vm._v("Bit Coin Price Index")])])
