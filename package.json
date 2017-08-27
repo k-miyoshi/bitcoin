@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm run sass & npm run build",
     "build": "webpack --progress",
     "sass": "node-sass --output-style compressed src/sass/bitcoin.scss docs/css/bitcoin.css",
     "lint": "node_modules/.bin/eslint ./src/js/*"

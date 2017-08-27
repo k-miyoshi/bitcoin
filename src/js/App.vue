@@ -1,9 +1,36 @@
 <template>
     <div id="app">
-        <current-price :results="currentResults"></current-price>
-        <historical-price :results="historicalResults"></historical-price>
+        <aside v-if="!isLoaded"><p class="loader"></p></aside>
+        <current-price v-show="isLoaded" :results="currentResults"></current-price>
+        <historical-price v-show="isLoaded" :results="historicalResults"></historical-price>
     </div>
 </template>
+
+<style lang="scss" scoped>
+aside {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+}
+.loader {
+    border-radius: 50%;
+    width:  60px;
+    height:  60px;
+    border: solid 8px rgba(#666666, 0.2);
+    border-top-color: #666666;
+    animation: spin 1s infinite linear;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
 
 <script>
 import 'babel-polyfill'; // need for async/await
@@ -42,20 +69,22 @@ export default {
             historicalResults: {
                 bpi: {},
                 disclaimer: ''
-            }
+            },
+            isLoaded: false
         }
     },
     created: async function () {
         const currentResponse = await axios.get(CURRENT_API)
         const historyResponse = await axios.get(HISTORICAL_API)
 
-        this.currentResults = currentResponse.data 
+        this.currentResults = currentResponse.data
         this.currentResults.chartData = historyResponse.data.bpi
 
         this.historicalResults.bpi = this._compare(historyResponse.data.bpi)
         this.historicalResults.disclaimer = historyResponse.data.disclaimer
 
-        this._compare(historyResponse.data);
+        this._compare(historyResponse.data)
+        this.isLoaded = true;
     },
     methods: {
         _compare: function(dataParam) {
