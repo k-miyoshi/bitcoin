@@ -6,7 +6,7 @@
             <dl>
                 <template v-for="(value, key) in results.bpi">
                 <dt>{{ key }}</dt>
-                <dd>&yen; {{ value }}</dd>
+                <dd>&yen; {{ value.toFixed(4) }}</dd>
                 </template>
             </dl>
             <p class="copyright">{{ results.disclaimer }}</p>

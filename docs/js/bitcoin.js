@@ -50420,7 +50420,7 @@ module.exports = function (Chart) {
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('section', [_c('h2', [_vm._v("Monthly Bit Coin Price")]), _vm._v(" "), _c('dl', [_vm._l((_vm.results.bpi), function(value, key) {
-    return [_c('dt', [_vm._v(_vm._s(key))]), _vm._v(" "), _c('dd', [_vm._v("¥ " + _vm._s(value))])]
+    return [_c('dt', [_vm._v(_vm._s(key))]), _vm._v(" "), _c('dd', [_vm._v("¥ " + _vm._s(value.toFixed(4)))])]
   })], 2), _vm._v(" "), _c('p', {
     staticClass: "copyright"
   }, [_vm._v(_vm._s(_vm.results.disclaimer))])])])
