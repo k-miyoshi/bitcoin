@@ -78,6 +78,7 @@ export default {
         const historyResponse = await axios.get(HISTORICAL_API)
 
         this.currentResults = currentResponse.data
+        this.currentResults.time.updated = this._UTCtoJST(currentResponse.data.time.updated)
         this.currentResults.chartData = historyResponse.data.bpi
 
         this.historicalResults.bpi = this._compare(historyResponse.data.bpi)
@@ -87,6 +88,10 @@ export default {
         this.isLoaded = true;
     },
     methods: {
+        _UTCtoJST: function(dateParam) {
+          const utc = new Date(dateParam)
+          return utc.toLocaleString()
+        },
         _compare: function(dataParam) {
             const objDate = Object.keys(dataParam).reverse()
             let sorted = {}
