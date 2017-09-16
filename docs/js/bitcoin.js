@@ -30764,6 +30764,7 @@ exports.default = {
     var historyResponse = await _axios2.default.get(HISTORICAL_API);
 
     this.currentResults = currentResponse.data;
+    this.currentResults.time.updated = this._UTCtoJST(currentResponse.data.time.updated);
     this.currentResults.chartData = historyResponse.data.bpi;
 
     this.historicalResults.bpi = this._compare(historyResponse.data.bpi);
@@ -30773,6 +30774,10 @@ exports.default = {
     this.isLoaded = true;
   },
   methods: {
+    _UTCtoJST: function _UTCtoJST(dateParam) {
+      var utc = new Date(dateParam);
+      return utc.toLocaleString();
+    },
     _compare: function _compare(dataParam) {
       var objDate = Object.keys(dataParam).reverse();
       var sorted = {};
