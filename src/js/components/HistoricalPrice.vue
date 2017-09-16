@@ -48,10 +48,8 @@ dl {
 </style>
 
 <script>
-import Chart from 'chart.js'
-
 export default {
-    name: 'historical-price',
-    props: ['results']
+  name: 'historical-price',
+  props: ['results']
 }
 </script>
