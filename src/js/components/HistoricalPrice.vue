@@ -21,7 +21,7 @@ section {
     color: #666666;
 }
 h2 {
-    padding: 10px 0;
+    padding: 10px 20px;
     border: solid 1px #666666;
     text-align: center;
 }

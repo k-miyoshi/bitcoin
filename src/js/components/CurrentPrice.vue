@@ -8,7 +8,8 @@
         <dt>{{ results.bpi.JPY.description }}</dt>
         <dd>&yen; {{ results.bpi.JPY.rate.split('.')[0] }}.<span>{{ results.bpi.JPY.rate.split('.')[1] }}</span></dd>
     </dl>
-    <time :datetime="results.time.updatedISO">updated {{ results.time.updated }}</time>
+    <time :datetime="results.time.updatedISO">
+      updated {{ results.time.updated | dateFormat }}</time>
 </section>
 </template>
 
@@ -58,6 +59,7 @@ time {
 </style>
 
 <script>
+import dateFormat from '../filters/dateFormat.js'
 import Chart from 'chart.js'
 
 export default {
@@ -68,6 +70,7 @@ export default {
       this._createChart(this.results.chartData)
     }
   },
+  filters: dateFormat,
   methods: {
     _createChart: function (dataParam) {
       const CTX = document.querySelector('.BitcoinChart')
