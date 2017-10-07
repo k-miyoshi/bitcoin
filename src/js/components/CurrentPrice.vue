@@ -8,8 +8,7 @@
         <dt>{{ results.bpi.JPY.description }}</dt>
         <dd>&yen; {{ results.bpi.JPY.rate.split('.')[0] }}.<span>{{ results.bpi.JPY.rate.split('.')[1] }}</span></dd>
     </dl>
-    <time :datetime="results.time.updatedISO">
-      updated {{ results.time.updated | dateFormat }}</time>
+    <time :datetime="results.time.updatedISO">{{ results.time.updated | dateFormat }}</time>
 </section>
 </template>
 
