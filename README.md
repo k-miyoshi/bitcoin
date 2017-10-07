@@ -1,4 +1,7 @@
 # Bit Coin Price Index
+
+[![Build Status](https://travis-ci.org/k-miyoshi/bitcoin.svg?branch=master)](https://travis-ci.org/k-miyoshi/bitcoin)
+
 BitCoin の１ケ月の変動チャートを日本円で表示
 
 ## Used Libraries
