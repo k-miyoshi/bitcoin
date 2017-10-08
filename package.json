@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run sass & npm run build & npm run uglify",
+    "start": "npm run sass && npm run lint && npm run build && npm run uglify",
     "build": "webpack --progress",
     "uglify": "node_modules/.bin/uglifyjs -c -o ./docs/js/bitcoin.js ./docs/js/bitcoin.js",
     "sass": "node-sass --output-style compressed src/sass/bitcoin.scss docs/css/bitcoin.css",
