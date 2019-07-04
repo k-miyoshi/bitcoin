@@ -1,9 +1,9 @@
 <template>
-    <div id="app">
-        <aside v-if="!isLoaded"><p class="loader"></p></aside>
-        <current-price v-show="isLoaded" :results="currentResults"></current-price>
-        <historical-price v-show="isLoaded" :results="historicalResults"></historical-price>
-    </div>
+  <div id="app">
+    <aside v-if="!isLoaded"><p class="loader"></p></aside>
+    <current-price v-show="isLoaded" :results="currentResults"></current-price>
+    <historical-price v-show="isLoaded" :results="historicalResults"></historical-price>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -40,7 +40,6 @@ import CurrentPrice from './components/CurrentPrice.vue'
 import HistoricalPrice from './components/HistoricalPrice.vue'
 
 const HISTORICAL_API = 'https://api.coindesk.com/v1/bpi/historical/close.json?currency=JPY'
-
 const CURRENT_API = 'https://api.coindesk.com/v1/bpi/currentprice/JPY.json'
 
 export default {
@@ -49,7 +48,7 @@ export default {
     CurrentPrice,
     HistoricalPrice
   },
-  data: function () {
+  data() {
     return {
       currentResults: {
         bpi: {
@@ -73,7 +72,7 @@ export default {
       isLoaded: false
     }
   },
-  created: async function () {
+  async created() {
     const currentResponse = await axios.get(CURRENT_API)
     const historyResponse = await axios.get(HISTORICAL_API)
 
@@ -88,11 +87,11 @@ export default {
     this.isLoaded = true
   },
   methods: {
-    _UTCtoJST: function (dateParam) {
+    _UTCtoJST(dateParam) {
       const utc = new Date(dateParam)
       return utc.toLocaleString()
     },
-    _compare: function (dataParam) {
+    _compare(dataParam) {
       const objDate = Object.keys(dataParam).reverse()
       const sorted = {}
 

@@ -1,15 +1,15 @@
 <template>
-<section>
+  <section>
     <h1><span>Bit Coin Price Index</span></h1>
     <canvas class="BitcoinChart" width="100" height="50"></canvas>
     <dl>
-        <dt>{{ results.bpi.USD.description }}</dt>
-        <dd>$ {{ results.bpi.USD.rate.split('.')[0] }}.<span>{{ results.bpi.USD.rate.split('.')[1] }}</span></dd>
-        <dt>{{ results.bpi.JPY.description }}</dt>
-        <dd>&yen; {{ results.bpi.JPY.rate.split('.')[0] }}.<span>{{ results.bpi.JPY.rate.split('.')[1] }}</span></dd>
+      <dt>{{ results.bpi.USD.description }}</dt>
+      <dd>$ {{ results.bpi.USD.rate.split('.')[0] }}.<span>{{ results.bpi.USD.rate.split('.')[1] }}</span></dd>
+      <dt>{{ results.bpi.JPY.description }}</dt>
+      <dd>&yen; {{ results.bpi.JPY.rate.split('.')[0] }}.<span>{{ results.bpi.JPY.rate.split('.')[1] }}</span></dd>
     </dl>
     <time :datetime="results.time.updatedISO">{{ results.time.updated | dateFormat }}</time>
-</section>
+  </section>
 </template>
 
 <style lang="scss" scoped>
@@ -64,14 +64,14 @@ import Chart from 'chart.js'
 export default {
   name: 'current-price',
   props: ['results'],
-  beforeUpdate: function () {
+  beforeUpdate() {
     if (this.results.chartData) {
       this._createChart(this.results.chartData)
     }
   },
   filters: dateFormat,
   methods: {
-    _createChart: function (dataParam) {
+    _createChart(dataParam) {
       const CTX = document.querySelector('.BitcoinChart')
 
       const labels = Object.keys(dataParam)
